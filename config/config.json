@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "zsxam123",
+    "database": "db_resep",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "zsxam123",
+    "database": "db_resep",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "zsxam123",
+    "database": "db_resep",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
