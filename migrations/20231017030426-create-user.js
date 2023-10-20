@@ -10,16 +10,16 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(255)
       },
       email: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(255)
       },
       phone: {
-        type: Sequelize.INTEGER
+        type: Sequelize.FLOAT(30)
       },
       password: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(30)
       },
       createdAt: {
         allowNull: false,
