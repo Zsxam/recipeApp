@@ -28,6 +28,7 @@ exports.create = async (req, res) => {
       banner: req.body.banner,
       description: req.body.description,
       video: req.body.video,
+      user_id: req.body.user_id,
       createdAt: new Date(),
       updatedAt: new Date(),
     };
@@ -82,6 +83,7 @@ exports.update = async (req, res) => {
       banner: req.body.banner,
       description: req.body.description,
       video: req.body.video,
+      user_id: req.body.user_id,
       updatedAt: new Date(),
     };
 
@@ -142,6 +144,33 @@ exports.search = async (req, res) => {
   } catch (error) {
     res.status(500).json({
       message: error.message || 'Some error occurred while searching for recipes.',
+      data: null,
+    });
+  }
+};
+
+exports.getRecipesByUserId = async (req, res) => {
+  try {
+    const user_id = req.params.user_id; // Ambil ID pengguna dari parameter URL
+
+    const recipes = await Recipe.findAll({
+      where: { user_id: user_id },
+    });
+
+    if (recipes.length === 0) {
+      return res.status(404).json({
+        message: 'No recipes found for the given user ID',
+        data: null,
+      });
+    }
+
+    res.json({
+      message: 'Recipes found successfully',
+      data: recipes,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.message || 'Some error occurred while fetching recipes.',
       data: null,
     });
   }

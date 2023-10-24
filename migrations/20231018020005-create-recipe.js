@@ -24,6 +24,15 @@ module.exports = {
       video: {
         type: Sequelize.STRING(255)
       },
+      user_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: {
+            tableName: 'Users',
+          },
+          key: 'id'
+        },
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

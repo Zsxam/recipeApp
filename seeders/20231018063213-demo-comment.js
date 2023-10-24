@@ -8,8 +8,8 @@ module.exports = {
     */
    await queryInterface.bulkInsert('Comments', [{
      text: 'Resep Ini Sangat Mudah Dimengerti, Saya Langsung Dapat Melakukannya Dengan Baik',
-     user_id: 6,
-     recipe_id: 4,
+     user_id: 1,
+     recipe_id: 1,
      createdAt: new Date(),
      updatedAt: new Date(),
    }], {});
